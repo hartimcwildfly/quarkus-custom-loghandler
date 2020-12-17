@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>quarkus-logging-mylog-parent</artifactId>
+    <version>0.1.2-SNAPSHOT</version>
+    <name>Quarkus - Logging - MyLog</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>deployment</module>
+        <module>runtime</module>
+    </modules>
+
+    <properties>
+        <quarkus.version>1.9.1.Final</quarkus.version>
+        <maven.compiler.release>11</maven.compiler.release>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.quarkus</groupId>
+                <version>${quarkus.version}</version>
+                <artifactId>quarkus-bom</artifactId>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>quarkus-logging-mylog</artifactId>
+                <type>jar</type>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>quarkus-logging-mylog-deployment</artifactId>
+                <type>jar</type>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version>
+                </plugin>
+                <plugin>
+                   <groupId>io.quarkus</groupId>
+                   <artifactId>quarkus-bootstrap-maven-plugin</artifactId>
+                   <version>${quarkus.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>

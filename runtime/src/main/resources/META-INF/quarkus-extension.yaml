@@ -1,0 +1,10 @@
+---
+name: "Logging MyLog"
+metadata:
+  keywords:
+  - "logging"
+  - "mylog"
+  categories:
+  - "core"
+  status: "preview"
+  guide: "https://confluence.todo"
